@@ -1,11 +1,11 @@
 const express = require('express');
 const {
-	getGroups,
-	getGroup,
-	createGroup,
-	deleteGroup,
-	updateGroup,
-} = require('../controllers/groupController');
+	getGigs,
+	getGig,
+	createGig,
+	deleteGig,
+	updateGig,
+} = require('../controllers/gigController');
 const requireAuth = require('../middleware/requireAuth');
 
 const router = express.Router();
@@ -16,16 +16,16 @@ router.use(requireAuth);
 // /api/workouts/
 
 // GET all workouts
-router.get('/', getGroups);
+router.get('/', getGigs);
 
 // GET a single workout
-router.get('/:id', getGroup);
+router.get('/:id', getGig);
 
 // POST a new workout
-router.post('/', createGroup);
+router.post('/', createGig);
 // DELETE a workout
-router.delete('/:id', deleteGroup);
+router.delete('/:id', deleteGig);
 // UPDATE a new workout
-router.patch('/:id', updateGroup);
+router.patch('/:id', updateGig);
 
 module.exports = router;

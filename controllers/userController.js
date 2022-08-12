@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 // mongo uses _id for id property
 const createToken = (_id) => {
-	// {payload} , secret, expires 3 days
+	// {payheadline_band} , secret, expires 3 days
 	return jwt.sign({ _id }, process.env.SECRET, { expiresIn: '3d' });
 };
 
