@@ -13,6 +13,15 @@ const gigSchema = new Schema(
 			type: String,
 			required: true,
 		},
+		support_bands: {
+			type: [
+				{
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Band',
+				},
+			],
+			required: false,
+		},
 		venue: {
 			type: String,
 			required: true,

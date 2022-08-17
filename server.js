@@ -4,10 +4,11 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
+const userRoutes = require('./routes/user');
 const gigRoutes = require('./routes/gigs');
+const bandRoutes = require('./routes/bands');
 // const targetRoutes = require('./routes/targets');
 // const workoutRoutes = require('./routes/workouts');
-const userRoutes = require('./routes/user');
 // const groupRoutes = require('./routes/groups');
 
 // express app
@@ -23,10 +24,11 @@ app.use((req, res, next) => {
 });
 
 // routes
+app.use('/api/user', userRoutes);
 app.use('/api/gigs', gigRoutes);
+app.use('/api/bands', bandRoutes);
 // app.use('/api/targets', targetRoutes);
 // app.use('/api/workouts', workoutRoutes);
-app.use('/api/user', userRoutes);
 // app.use('/api/groups', groupRoutes);
 
 // connect to db
