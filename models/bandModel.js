@@ -8,6 +8,7 @@ const bandSchema = new Schema(
 			type: String,
 			required: true,
 			unique: true,
+			lowercase: true, // Always convert `headline_band` to lowercase
 		},
 		user_id: {
 			type: String,

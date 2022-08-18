@@ -12,26 +12,30 @@ const gigSchema = new Schema(
 		headline_band: {
 			type: String,
 			required: true,
+			lowercase: true, // Always convert `headline_band` to lowercase
 		},
-		support_bands: {
-			type: [
-				{
-					type: mongoose.Schema.Types.ObjectId,
-					ref: 'Band',
-				},
-			],
-			required: false,
-		},
+		// support_bands: {
+		// 	type: [
+		// 		{
+		// 			type: mongoose.Schema.Types.ObjectId,
+		// 			ref: 'Band',
+		// 		},
+		// 	],
+		// 	required: false,
+		// },
 		venue: {
 			type: String,
 			required: true,
+			lowercase: true,
 		},
 		city: {
 			type: String,
 			required: true,
+			lowercase: true,
 		},
 		gig_details: {
 			type: String,
+			lowercase: true,
 		},
 		user_id: {
 			type: String,
