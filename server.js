@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const userRoutes = require('./routes/user');
 const gigRoutes = require('./routes/gigs');
 const bandRoutes = require('./routes/bands');
+const cityRoutes = require('./routes/cities');
 // const targetRoutes = require('./routes/targets');
 // const workoutRoutes = require('./routes/workouts');
 // const groupRoutes = require('./routes/groups');
@@ -27,6 +28,7 @@ app.use((req, res, next) => {
 app.use('/api/user', userRoutes);
 app.use('/api/gigs', gigRoutes);
 app.use('/api/bands', bandRoutes);
+app.use('/api/cities', cityRoutes);
 // app.use('/api/targets', targetRoutes);
 // app.use('/api/workouts', workoutRoutes);
 // app.use('/api/groups', groupRoutes);
