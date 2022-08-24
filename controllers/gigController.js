@@ -26,8 +26,15 @@ const getGig = async (req, res) => {
 
 // create new workout
 const createGig = async (req, res) => {
-	const { headline_band, venue, gig_date, gig_details, city, isFestival } =
-		req.body;
+	const {
+		headline_band,
+		venue,
+		gig_date,
+		gig_details,
+		city,
+		isFestival,
+		support_band,
+	} = req.body;
 	// console.log(gig, 'gig');
 	// const { title, headline_band, reps } = req.body;
 
@@ -70,6 +77,7 @@ const createGig = async (req, res) => {
 			city,
 			user_id,
 			isFestival,
+			support_band,
 		});
 		// gig.support_bands.push()
 		res.status(200).json(gig);

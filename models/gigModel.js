@@ -14,6 +14,11 @@ const gigSchema = new Schema(
 			required: true,
 			lowercase: true, // Always convert `headline_band` to lowercase
 		},
+		support_band: {
+			type: String,
+			required: false,
+			lowercase: true, // Always convert `headline_band` to lowercase
+		},
 		// support_bands: {
 		// 	type: [
 		// 		{
