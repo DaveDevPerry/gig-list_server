@@ -23,6 +23,11 @@ const gigSchema = new Schema(
 		// 	],
 		// 	required: false,
 		// },
+		isFestival: {
+			type: Boolean,
+			required: true,
+			default: false,
+		},
 		venue: {
 			type: String,
 			required: true,
