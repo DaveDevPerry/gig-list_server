@@ -3,12 +3,17 @@ const mongoose = require('mongoose');
 
 // get all gigs
 const getVenues = async (req, res) => {
-	const user_id = req.user._id;
-
-	// only finds gigs that match user_id
-	const venues = await Venue.find({ user_id }).sort({ createdAt: -1 });
+	const venues = await Venue.find({}).sort({ createdAt: -1 });
 	res.status(200).json(venues);
 };
+// // get all gigs
+// const getVenues = async (req, res) => {
+// 	const user_id = req.user._id;
+
+// 	// only finds gigs that match user_id
+// 	const venues = await Venue.find({ user_id }).sort({ createdAt: -1 });
+// 	res.status(200).json(venues);
+// };
 
 // get a single workout
 const getVenue = async (req, res) => {
