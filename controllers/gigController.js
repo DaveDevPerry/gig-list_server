@@ -23,6 +23,18 @@ const getGig = async (req, res) => {
 	}
 	res.status(200).json(gig);
 };
+// const getGig = async (req, res) => {
+// 	const { id } = req.params;
+// 	// check if id exists
+// 	if (!mongoose.Types.ObjectId.isValid(id)) {
+// 		return res.status(404).json({ error: 'No such gig' });
+// 	}
+// 	const gig = await Gig.findById(id);
+// 	if (!gig) {
+// 		return res.status(404).json({ error: 'No such gig' });
+// 	}
+// 	res.status(200).json(gig);
+// };
 
 // create new workout
 const createGig = async (req, res) => {
