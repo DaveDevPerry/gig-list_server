@@ -62,9 +62,9 @@ const createGig = async (req, res) => {
 	if (!gig_date) {
 		emptyFields.push('gig_date');
 	}
-	if (!gig_details) {
-		emptyFields.push('gig_details');
-	}
+	// if (!gig_details) {
+	// 	emptyFields.push('gig_details');
+	// }
 	if (!venue) {
 		emptyFields.push('venue');
 	}
