@@ -1,20 +1,20 @@
 const Band = require('../models/bandModel');
 const mongoose = require('mongoose');
 
-// get all gigs
-const getBands = async (req, res) => {
-	// const user_id = req.user._id;
-	// only finds gigs that match user_id
-	const bands = await Band.find({}).sort({ createdAt: -1 });
-	res.status(200).json(bands);
-};
-// // get all bands specific to user - WORKING
+// // get all gigs
 // const getBands = async (req, res) => {
-// 	const user_id = req.user._id;
+// 	// const user_id = req.user._id;
 // 	// only finds gigs that match user_id
-// 	const bands = await Band.find({ user_id }).sort({ createdAt: -1 });
+// 	const bands = await Band.find({}).sort({ createdAt: -1 });
 // 	res.status(200).json(bands);
 // };
+// get all bands specific to user - WORKING
+const getBands = async (req, res) => {
+	const user_id = req.user._id;
+	// only finds gigs that match user_id
+	const bands = await Band.find({ user_id }).sort({ createdAt: -1 });
+	res.status(200).json(bands);
+};
 
 // get a single workout
 const getBand = async (req, res) => {

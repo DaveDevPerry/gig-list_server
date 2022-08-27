@@ -2,18 +2,18 @@ const City = require('../models/cityModel');
 const mongoose = require('mongoose');
 
 // get all gigs
-const getCities = async (req, res) => {
-	const cities = await City.find({}).sort({ createdAt: -1 });
-	res.status(200).json(cities);
-};
-// // get all cities - user specific - WORKING
 // const getCities = async (req, res) => {
-// 	const user_id = req.user._id;
-
-// 	// only finds gigs that match user_id
-// 	const cities = await City.find({ user_id }).sort({ createdAt: -1 });
+// 	const cities = await City.find({}).sort({ createdAt: -1 });
 // 	res.status(200).json(cities);
 // };
+// get all cities - user specific - WORKING
+const getCities = async (req, res) => {
+	const user_id = req.user._id;
+
+	// only finds gigs that match user_id
+	const cities = await City.find({ user_id }).sort({ createdAt: -1 });
+	res.status(200).json(cities);
+};
 
 // get a single workout
 const getCity = async (req, res) => {
