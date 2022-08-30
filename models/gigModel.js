@@ -8,6 +8,7 @@ const gigSchema = new Schema(
 		gig_date: {
 			type: Date,
 			required: true,
+			unique: true,
 		},
 		headline_band: {
 			type: String,
